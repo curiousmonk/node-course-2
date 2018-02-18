@@ -3,6 +3,18 @@ const express = require('express');
 // Starting the app
 var app = express();
 
+
+
+
+
+
+const port = process.env.PORT || 3000;
+
+
+
+
+
+
 //HTML Static Page, We are using Middleware , It tell express to use something in a particular way, Here well the node to use public as the main director
 app.use(express.static(__dirname + '/public'));
 
@@ -69,9 +81,10 @@ app.get('/aboutus',(req ,res) => {
     
 });
 
+//------------------Rendering Ends Here-----------------
 
 
 //Open app at port 3000
-app.listen(3000,() => {
-    console.log("Server Running on 3000")
+app.listen(port,() => {
+    console.log(`Server is up on ${port}`)
 });
